@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- Meta tags për SEO - statike -->
+  <title>Share Your Journey - Create Travel Story | TravelJourney</title>
+  <meta name="description" content="Share your Albanian travel experience with our community. Create and publish your travel story to inspire other travelers and showcase Albania's beauty." />
+  <meta name="keywords" content="share travel story, create travel blog, Albanian travel experiences, travel community, write travel story" />
+  <link rel="canonical" href="http://127.0.0.1:5500/pages/create.html" />
+  
+  <!-- Meta tags për Open Graph -->
+  <meta property="og:title" content="Share Your Journey - Create Travel Story | TravelJourney" />
+  <meta property="og:description" content="Share your Albanian travel experience with our community. Create and publish your travel story to inspire other travelers and showcase Albania's beauty." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://127.0.0.1:5500/pages/create.html" />
+  <meta property="og:site_name" content="TravelJourney.al" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Meta tags për Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Share Your Journey - Create Travel Story | TravelJourney" />
+  <meta name="twitter:description" content="Share your Albanian travel experience with our community. Create and publish your travel story to inspire other travelers and showcase Albania's beauty." />
+  
+  <!-- Linkjet e CSS-së -->
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/create.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Të dhënat e strukturuara - JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Share Your Journey",
+    "description": "Share your Albanian travel experience with our community. Create and publish your travel story to inspire other travelers and showcase Albania's beauty.",
+    "url": "http://127.0.0.1:5500/pages/create.html"
+  }
+  </script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-logo">TravelJourney</div>
+      <div class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="posts.html">Posts</a></li>
+        <li class="dropdown">
+          <a href="#">Categories ▼</a>
+          <ul class="dropdown-content" id="categoryList">
+            <!-- Kategoriet do të mbushen me JS -->
+          </ul>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+        <li id="profileItem" style="display: none;"><a href="profile.html"><i class="fas fa-user-circle"></i> My Profile</a></li>
+        <li id="loginItem"><a href="login.html" id="loginLogoutBtn">Login</a></li>
+        <li id="registerItem"><a href="register.html" class="register-btn">Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Seksioni hero -->
+  <section class="share-hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Share Your Journey</h1>
+        <p>Every trip has a story worth telling. Let your adventures inspire others to explore our beautiful world.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni "Pse të ndash" -->
+  <section class="why-share">
+    <div class="container">
+      <h2 class="section-title">Why Share Your Travel Experiences?</h2>
+      
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-book-open"></i>
+          </div>
+          <h3>Preserve Memories</h3>
+          <p>Document your adventures in a beautiful way that you can revisit for years to come.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Inspire Others</h3>
+          <p>Your journey could be the inspiration someone needs to discover a new destination.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3>Share Knowledge</h3>
+          <p>Help fellow travelers with practical tips, hidden gems, and invaluable insights.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Përmbajtja kryesore -->
+  <main>
+    <div class="form-container">
+      <div class="form-header">
+        <h2>Create Your Travel Story</h2>
+        <p class="form-subtitle">Fill in the details below to share your adventure with the world</p>
+      </div>
+      
+      <form id="createPostForm" enctype="multipart/form-data">
+        <!-- Progresi i formës -->
+        <div class="form-progress">
+          <div class="progress-step active">
+            <span class="step-number">1</span>
+            <span class="step-label">Basic Info</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step">
+            <span class="step-number">2</span>
+            <span class="step-label">Content</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step">
+            <span class="step-number">3</span>
+            <span class="step-label">Finish</span>
+          </div>
+        </div>
+        
+        <!-- Hapi 1 -->
+        <div class="form-step active-step" id="step1">
+          <div class="form-group">
+            <label for="title"><i class="fas fa-heading"></i> Title</label>
+            <input type="text" id="title" name="title" placeholder="A captivating title for your journey" required data-pattern=".{5,100}" data-error="Title must be between 5 and 100 characters" />
+            <div class="error-hint"></div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="publishAt"><i class="far fa-calendar-alt"></i> Publish Date</label>
+              <input type="datetime-local" id="publishAt" name="publishAt" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="status"><i class="fas fa-toggle-on"></i> Status</label>
+              <select id="status" name="status">
+                <option value="1">Published</option>
+                <option value="0">Draft</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="categories"><i class="fas fa-tags"></i> Categories</label>
+            <select id="categories" name="categories" multiple required data-error="Select at least one category">
+              <!-- Do të mbushen me JavaScript nga API -->
+            </select>
+            <small>Hold Ctrl (or Cmd) to select multiple categories</small>
+            <div class="error-hint"></div>
+          </div>
+          
+          <!-- Navigimi i formës -->
+          <div class="form-nav">
+            <button type="button" class="btn-next" data-step="2">Next <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+        
+        <!-- Hapi 2 -->
+        <div class="form-step" id="step2">
+          <div class="form-group">
+            <label for="content"><i class="fas fa-pen-fancy"></i> Your Story</label>
+            <textarea id="content" name="content" rows="10" placeholder="Tell us about your adventure..." required data-pattern=".{50,}" data-error="Your story should be at least 50 characters long"></textarea>
+            <div class="input-helper">
+              <div class="character-count">0 characters</div>
+              <div class="error-hint"></div>
+            </div>
+          </div>
+          
+          <!-- Seksioni i ngarkimit të imazhit -->
+          <div class="form-group image-upload-container">
+            <label for="image"><i class="fas fa-image"></i> Featured Image</label>
+            <div class="image-upload-area" id="imageDropArea">
+              <div class="upload-icon">
+                <i class="fas fa-cloud-upload-alt"></i>
+              </div>
+              <p>Drag & drop your image here or</p>
+              <div class="upload-btn-wrapper">
+                <button type="button" class="upload-btn">Browse Files</button>
+                <input type="file" id="image" name="image" accept="image/*" />
+              </div>
+              <p class="upload-help">Recommended: JPG, PNG or GIF, at least 1200×800px</p>
+            </div>
+            <!-- Kontejneri i paraprakut të imazhit -->
+            <div class="image-preview-container" id="imagePreview" style="display: none;">
+              <button type="button" class="remove-image-btn"><i class="fas fa-times"></i></button>
+            </div>
+          </div>
+          
+          <!-- Navigimi i formës -->
+          <div class="form-nav">
+            <button type="button" class="btn-prev" data-step="1"><i class="fas fa-arrow-left"></i> Back</button>
+            <button type="button" class="btn-next" data-step="3">Review <i class="fas fa-arrow-right"></i></button>
+          </div>
+        </div>
+        
+        <!-- Hapi 3 -->
+        <div class="form-step" id="step3">
+          <h3 class="review-title">Review Your Post</h3>
+          
+          <!-- Përmbajtja e rishikimit -->
+          <div class="review-content">
+            <div class="review-item">
+              <div class="review-label">Title:</div>
+              <div class="review-value" id="reviewTitle"></div>
+            </div>
+            
+            <div class="review-item">
+              <div class="review-label">Categories:</div>
+              <div class="review-value" id="reviewCategories"></div>
+            </div>
+            
+            <div class="review-item">
+              <div class="review-label">Content Preview:</div>
+              <div class="review-value content-preview" id="reviewContent"></div>
+            </div>
+            
+            <div class="review-item">
+              <div class="review-label">Image:</div>
+              <div class="review-value" id="reviewImage">
+                <span class="no-image-text">No image uploaded</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- CTA finale -->
+          <div class="final-cta">
+            <p>Ready to share your adventure with the world?</p>
+          </div>
+          
+          <!-- Navigimi i formës -->
+          <div class="form-nav">
+            <button type="button" class="btn-prev" data-step="2"><i class="fas fa-arrow-left"></i> Back</button>
+            <button type="submit" class="submit-btn">Publish My Story <i class="fas fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+  
+  <!-- Seksioni i inspirimit -->
+  <section class="inspiration-section">
+    <div class="container">
+      <div class="inspiration-content">
+        <h2>"The world is a book and those who do not travel read only one page."</h2>
+        <p class="quote-author">— Saint Augustine</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">TravelJourney</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="posts.html">Posts</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <p class="copyright">Copyright TravelJourney © 2025. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Modali i dialogut të hyrjes -->
+  <div id="loginDialogModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-header">
+        <h2>Login Required</h2>
+      </div>
+      <div class="modal-body">
+        <p>You need to be logged in to create a post. Would you like to login now?</p>
+      </div>
+      <div class="modal-footer">
+        <button id="cancelLoginBtn" class="btn btn-secondary">Cancel</button>
+        <button id="proceedLoginBtn" class="btn">Login</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tooltip -->
+  <div id="tooltip" class="tooltip"></div>
+
+  <!-- Kontejneri i njoftimeve -->
+  <div id="notification-container"></div>
+
+  <!-- Scriptet e SEO-së -->
+  <script src="../js/seo.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/create.js"></script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- Meta tags për SEO - statike (faqe profili privat) -->
+  <title>My Profile - TravelJourney</title>
+  <meta name="description" content="Manage your TravelJourney profile, view your travel stories, and update your account settings. Share your Albanian travel experiences with the community." />
+  <meta name="keywords" content="travel profile, my travel stories, travel account, TravelJourney profile, travel blogger profile" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="http://127.0.0.1:5500/pages/profile.html" />
+  
+  <!-- Meta tags për Open Graph -->
+  <meta property="og:title" content="My Profile - TravelJourney" />
+  <meta property="og:description" content="Manage your TravelJourney profile, view your travel stories, and update your account settings. Share your Albanian travel experiences with the community." />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="http://127.0.0.1:5500/pages/profile.html" />
+  <meta property="og:site_name" content="TravelJourney.al" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Meta tags për Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="My Profile - TravelJourney" />
+  <meta name="twitter:description" content="Manage your TravelJourney profile, view your travel stories, and update your account settings. Share your Albanian travel experiences with the community." />
+  
+  <!-- Linkjet e CSS-së -->
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/profile.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Të dhënat e strukturuara - JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "name": "User Profile",
+    "description": "Personal profile page for managing travel stories and account settings",
+    "url": "http://127.0.0.1:5500/pages/profile.html"
+  }
+  </script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-logo">TravelJourney</div>
+      <div class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="posts.html">Posts</a></li>
+        <li class="dropdown">
+          <a href="#">Categories ▼</a>
+          <ul class="dropdown-content" id="categoryList">
+            <!-- Kategoriet do të mbushen me JS -->
+          </ul>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+        <li id="profileItem" class="active"><a href="profile.html"><i class="fas fa-user-circle"></i> <span id="userNameDisplay">My Profile</span></a></li>
+        <li id="loginItem"><a href="login.html" id="loginLogoutBtn">Login</a></li>
+        <li id="registerItem"><a href="register.html" class="register-btn">Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Seksioni i kokës së profilit -->
+  <section class="profile-header">
+    <div class="container">
+      <div class="profile-cover">
+        <div class="profile-avatar">
+          <img id="profileAvatar" src="../image/default-avatar.jpg" alt="Profile avatar" loading="lazy" />
+          <div class="edit-avatar" id="editAvatarBtn">
+            <i class="fas fa-camera"></i>
+          </div>
+        </div>
+      </div>
+      <div class="profile-info">
+        <h1 id="profileUsername">Username</h1>
+        <p class="profile-bio" id="profileBio">Loading user information...</p>
+        <div class="profile-stats">
+          <div class="stat">
+            <span class="stat-count" id="postsCount">0</span>
+            <span class="stat-label">Posts</span>
+          </div>
+        </div>
+        <button id="editProfileBtn" class="btn"><i class="fas fa-edit"></i> Edit Profile</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni i përmbajtjes së profilit -->
+  <section class="profile-content">
+    <div class="container">
+      <div class="profile-tabs">
+        <button class="tab-btn active" data-tab="my-posts">My Posts</button>
+        <button class="tab-btn" data-tab="account-settings">Account Settings</button>
+      </div>
+
+      <!-- Tab-i "Postimet e mia" -->
+      <div class="tab-content active" id="my-posts">
+        <div class="tab-header">
+          <h2>My Posts</h2>
+          <a href="create.html" class="btn create-post-btn"><i class="fas fa-plus"></i> Create New Post</a>
+        </div>
+        <div class="posts-grid" id="userPosts">
+          <!-- Postimet e përdoruesit do të ngarkohen dinamikisht këtu -->
+          <div class="loading" id="userPosts-loader"></div>
+        </div>
+      </div>
+
+      <!-- Tab-i "Cilësimet e llogarisë" -->
+      <div class="tab-content" id="account-settings">
+        <div class="tab-header">
+          <h2>Account Settings</h2>
+        </div>
+        <form id="profileUpdateForm" class="settings-form">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Your first name" />
+            <div id="firstName-error" class="error-message"></div>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Your last name" />
+            <div id="lastName-error" class="error-message"></div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email address" readonly />
+            <div id="email-error" class="error-message"></div>
+          </div>
+          <div class="form-group">
+            <label for="description">Bio</label>
+            <textarea id="description" name="description" rows="4" placeholder="Tell us about yourself"></textarea>
+            <div id="description-error" class="error-message"></div>
+          </div>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" placeholder="Your location" />
+            <div id="location-error" class="error-message"></div>
+          </div>
+          <div class="form-group">
+            <label>Social Media Links</label>
+            <div class="social-input">
+              <i class="fab fa-facebook"></i>
+              <input type="text" id="facebook" name="facebook" placeholder="Facebook URL" />
+            </div>
+            <div class="social-input">
+              <i class="fab fa-twitter"></i>
+              <input type="text" id="twitter" name="twitter" placeholder="Twitter URL" />
+            </div>
+            <div class="social-input">
+              <i class="fab fa-instagram"></i>
+              <input type="text" id="instagram" name="instagram" placeholder="Instagram URL" />
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modali i ngarkimit të imazhit -->
+  <div id="imageUploadModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-header">
+        <h2>Update Profile Picture</h2>
+      </div>
+      <div class="modal-body">
+        <form id="imageUploadForm" enctype="multipart/form-data">
+          <div class="upload-area">
+            <div class="upload-preview">
+              <img id="imagePreview" src="../image/default-avatar.jpg" alt="Image preview" loading="lazy" />
+            </div>
+            <label for="imageFile" class="file-label">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <span>Choose a file</span>
+            </label>
+            <input type="file" id="imageFile" name="imageFile" accept="image/*" style="display: none;" />
+          </div>
+          <div class="upload-instructions">
+            <p>Select an image to upload. The image should be at least 300x300 pixels.</p>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button id="cancelUploadBtn" class="btn btn-secondary">Cancel</button>
+        <button id="confirmUploadBtn" class="btn">Upload</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modali i ndryshimit të postimit -->
+  <div id="editPostModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-header">
+        <h2>Edit Post</h2>
+      </div>
+      <div class="modal-body">
+        <form id="editPostForm">
+          <div class="form-group">
+            <label for="postTitle">Title</label>
+            <input type="text" id="postTitle" name="postTitle" placeholder="Post title" />
+            <div id="postTitle-error" class="error-message"></div>
+          </div>
+          <div class="form-group">
+            <label for="postContent">Content</label>
+            <textarea id="postContent" name="postContent" rows="6" placeholder="Post content"></textarea>
+            <div id="postContent-error" class="error-message"></div>
+          </div>
+          <input type="hidden" id="postId" name="postId" />
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button id="cancelEditBtn" class="btn btn-secondary">Cancel</button>
+        <button id="deletePostBtn" class="btn btn-danger">Delete Post</button>
+        <button id="savePostBtn" class="btn">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modali i konfirmimit -->
+  <div id="confirmationModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-header">
+        <h2>Confirm Delete</h2>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this post? This action cannot be undone.</p>
+      </div>
+      <div class="modal-footer">
+        <button id="cancelDeleteBtn" class="btn btn-secondary">Cancel</button>
+        <button id="confirmDeleteBtn" class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">TravelJourney</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="posts.html">Posts</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <p class="copyright">Copyright TravelJourney © 2025. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Modali i dialogut të hyrjes -->
+  <div id="loginDialogModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-header">
+        <h2>Login Required</h2>
+      </div>
+      <div class="modal-body">
+        <p>You need to be logged in to perform this action. Would you like to login now?</p>
+      </div>
+      <div class="modal-footer">
+        <button id="cancelLoginBtn" class="btn btn-secondary">Cancel</button>
+        <button id="proceedLoginBtn" class="btn">Login</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Kontejneri i njoftimeve -->
+  <div id="notification-container"></div>
+
+  <!-- Scriptet e SEO-së -->
+  <script src="../js/seo.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/profile.js"></script>
+</body>
+</html>

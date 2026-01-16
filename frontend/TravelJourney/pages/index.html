@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Meta tags për SEO - dinamike -->
+  <title id="page-title">TravelJourney - Discover Albania</title>
+  <meta name="description" content="Share your Albanian travel experiences and discover hidden gems with TravelJourney" id="page-description">
+  <meta name="keywords" content="Albania travel, Albanian tourism, Balkans travel, authentic experiences, travel blog" id="page-keywords">
+  <link rel="canonical" href="http://127.0.0.1:5500/pages/index.html" id="page-canonical">
+  
+  <!-- Meta tags për Open Graph -->
+  <meta property="og:title" content="TravelJourney - Discover Albania" id="og-title">
+  <meta property="og:description" content="Share your Albanian travel experiences and discover hidden gems with TravelJourney" id="og-description">
+  <meta property="og:type" content="website" id="og-type">
+  <meta property="og:url" content="http://127.0.0.1:5500/" id="og-url">
+  <meta property="og:site_name" content="TravelJourney.al">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Meta tags për Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TravelJourney - Discover Albania" id="twitter-title">
+  <meta name="twitter:description" content="Share your Albanian travel experiences and discover hidden gems with TravelJourney" id="twitter-description">
+  
+  <!-- Linkjet e CSS-së -->
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Të dhënat e strukturuara - JSON-LD -->
+  <script type="application/ld+json" id="structured-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "TravelJourney.al",
+    "description": "Discover Albania through authentic travel stories and experiences shared by real travelers",
+    "url": "http://127.0.0.1:5500",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "http://127.0.0.1:5500/pages/posts.html?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Shiriti i navigimit -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-logo">TravelJourney</div>
+      <div class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="posts.html">Posts</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-trigger">Categories <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-content" id="categoryList">
+            <!-- Kategoriet do të ngarkohen këtu -->
+            <li class="dropdown-placeholder">Loading categories...</li>
+          </ul>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+        <li id="profileItem" style="display: none;"><a href="profile.html"><i class="fas fa-user-circle"></i> My Profile</a></li>
+        <li id="loginItem"><a href="login.html" id="loginLogoutBtn">Login</a></li>
+        <li id="registerItem"><a href="register.html" class="register-btn">Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Seksioni kryesor hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Uncover the magic of Albania: Every journey tells a story</h1>
+        <p>Discover authentic travel experiences, hidden gems, and local insights from fellow explorers</p>
+         <div class="hero-buttons">
+        <button id="exploreStoriesBtn" class="btn btn-primary" title="Explore travel stories">
+          <i class="fas fa-compass"></i> Explore Our Stories
+        </button>
+        <a href="posts.html" class="btn btn-secondary-hero">
+          <i class="fas fa-map-marked-alt"></i> Browse All Posts
+        </a>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni i veprimeve të shpejta -->
+  <section class="quick-actions">
+    <div class="container">
+      <div class="quick-actions-grid">
+        <div class="action-card featured-action">
+          <div class="action-icon">
+            <i class="fas fa-pen-fancy"></i>
+          </div>
+          <h3>Share Your Journey</h3>
+          <p>Have an amazing Albanian adventure to share? Log in to tell your story and inspire other travelers!</p>
+          <!-- Mesazhi i kërkesës për hyrje -->
+          <div id="loginRequiredMessage" class="login-required-msg" style="display: none;">
+            <i class="fas fa-info-circle"></i>
+            <span>Please <a href="login.html" class="login-link">login</a> to share your travel story</span>
+          </div>
+          <div class="button-container">
+            <button id="createPostBtn" class="btn btn-action" title="Create a new post">
+              <i class="fas fa-plus"></i> Create Your Post
+            </button>
+          </div>
+        </div>
+        
+        <div class="action-card">
+          <div class="action-icon">
+            <i class="fas fa-search-location"></i>
+          </div>
+          <h3>Find Destinations</h3>
+          <p>Explore detailed guides and tips for Albania's most beautiful locations</p>
+          <a href="posts.html" class="btn btn-action" aria-label="Discover places and travel destinations in Albania">
+            <i class="fas fa-map"></i> Discover Places
+          </a>
+        </div>
+        
+        <div class="action-card">
+          <div class="action-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Join Community</h3>
+          <p>Connect with fellow travelers and locals passionate about Albanian tourism</p>
+          <a href="about.html" class="btn btn-action" aria-label="Learn more about TravelJourney community and our mission">
+            <i class="fas fa-heart"></i> Learn About Our Community
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Historite e fundit të udhëtimit -->
+  <section class="latest-stories">
+    <div class="container">
+      <h2 class="section-title">Latest Travel Stories</h2>
+      <p class="section-description">Discover the most recent adventures shared by our travel community</p>
+      
+      <div id="latestPostsContainer" class="posts-showcase">
+        <!-- Postimet do të ngarkohen dinamikisht -->
+        <div class="loading" id="latest-posts-loader"></div>
+      </div>
+      
+      <div class="view-more-container">
+        <a href="posts.html" class="view-more-btn">View All Stories <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni "Pse të postosh me ne" -->
+  <section class="why-post-with-us">
+    <div class="container">
+      <h2 class="section-title">Why Share Your Story With Us</h2>
+      <div class="benefits-container">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3>Global Audience</h3>
+          <p>Reach travelers from all around the world interested in exploring Albania</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-pen-fancy"></i>
+          </div>
+          <h3>Easy Sharing</h3>
+          <p>User-friendly interface to share your unique experiences and tips</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Community Support</h3>
+          <p>Connect with fellow travelers and locals passionate about Albanian tourism</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni i testimonial-eve -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">What Travelers Say</h2>
+      <div class="testimonials-container">
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">
+            <img src="../image/sarah.jpg" alt="Testimonial from Sarah Johnson" loading="lazy">
+          </div>
+          <div class="testimonial-content">
+            <p>"TravelJourney helped me discover hidden gems in Albania that I would have never found otherwise. The local insights were invaluable!"</p>
+            <h4>Sarah Johnson</h4>
+            <span>from United Kingdom</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">
+            <img src="../image/marco.jpg" alt="Testimonial from Marco Rossi" loading="lazy">
+          </div>
+          <div class="testimonial-content">
+            <p>"I posted about my hiking experience in the Albanian Alps and connected with other adventure seekers. This platform is amazing for community building!"</p>
+            <h4>Marco Rossi</h4>
+            <span>from Italy</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-avatar">
+            <img src="../image/emma.jpg" alt="Testimonial from Emma Schmidt" loading="lazy">
+          </div>
+          <div class="testimonial-content">
+            <p>"As a solo female traveler, the advice I got from TravelJourney members made my Albanian trip safe, affordable and unforgettable."</p>
+            <h4>Emma Schmidt</h4>
+            <span>from Germany</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Thirrja për veprim -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Share Your Albanian Adventure?</h2>
+      <p>Join our community of passionate travelers and help others discover the beauty of Albania</p>
+      <div class="cta-buttons">
+        <button id="ctaSignUpBtn" class="btn btn-large btn-primary" title="Sign up to join our community">
+          <i class="fas fa-user-plus"></i> Sign Up Now
+        </button>
+        <div class="cta-button-container">
+          <!-- Mesazhi i kërkesës për hyrje për CTA -->
+          <div id="ctaLoginRequiredMessage" class="login-required-msg" style="display: none;">
+            <i class="fas fa-info-circle"></i>
+            <span>Please <a href="login.html" class="login-link">login</a> to share your story</span>
+          </div>
+          <button id="ctaCreatePostBtn" class="btn btn-large btn-secondary" title="Create a new post">
+            <i class="fas fa-edit"></i> Share Your Story
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni i gazetës dhe komunitetit -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-text">
+          <h2>Never Miss an Adventure</h2>
+          <p>Get the latest travel stories, destination guides, and exclusive tips delivered to your inbox</p>
+          <div class="newsletter-features">
+            <div class="feature">
+              <i class="fas fa-check"></i>
+              <span>Weekly travel inspiration</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check"></i>
+              <span>Exclusive destination guides</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check"></i>
+              <span>Community highlights</span>
+            </div>
+          </div>
+        </div>
+        <div class="newsletter-form">
+          <div class="form-group">
+            <input type="email" placeholder="Enter your email address" id="emailInput">
+            <button class="btn btn-newsletter">
+              <i class="fas fa-paper-plane"></i> Subscribe
+            </button>
+          </div>
+          <p class="newsletter-note">Join 5,000+ travelers already subscribed</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Poshtëfaqja -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">TravelJourney</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="posts.html">Posts</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <p class="copyright">Copyright TravelJourney © 2025. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Tooltip i përmirësuar -->
+  <div id="tooltip" class="tooltip">
+    <div class="tooltip-content">
+      <i class="fas fa-info-circle"></i>
+      <span class="tooltip-text"></span>
+    </div>
+    <div class="tooltip-arrow"></div>
+  </div>
+
+  <!-- Kontejneri i njoftimeve -->
+  <div id="notification-container"></div>
+
+  <!-- Modali i dialogut të hyrjes -->
+  <div id="loginDialogModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-header">
+        <h2><i class="fas fa-sign-in-alt"></i> Login Required</h2>
+      </div>
+      <div class="modal-body">
+        <div class="modal-icon">
+          <i class="fas fa-user-lock"></i>
+        </div>
+        <p>You need to be logged in to create and share your travel stories with our community.</p>
+        <div class="modal-benefits">
+          <div class="benefit-item">
+            <i class="fas fa-check"></i>
+            <span>Share your adventures</span>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-check"></i>
+            <span>Connect with travelers</span>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-check"></i>
+            <span>Get travel tips</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="cancelLoginBtn" class="btn btn-secondary">Maybe Later</button>
+        <button id="proceedLoginBtn" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Login Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Template të postimeve (të fshehura) -->
+  <template id="featuredPostTemplate">
+    <div class="featured-post-card">
+      <div class="post-image">
+        <img alt="" loading="lazy">
+      </div>
+      <div class="post-content">
+        <span class="post-category"></span>
+        <h2 class="post-title"></h2>
+        <div class="post-author-info">
+          <div class="author-avatar">
+            <img alt="" loading="lazy">
+          </div>
+          <div class="author-details">
+            <span class="author-name"></span>
+            <span class="post-date"></span>
+          </div>
+        </div>
+        <p class="post-excerpt"></p>
+        <a href="" class="read-more" aria-label="Read full travel story">Read Travel Story <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </template>
+
+  <template id="widePostTemplate">
+    <div class="wide-post-card">
+      <div class="post-image">
+        <img alt="" loading="lazy">
+      </div>
+      <div class="post-content">
+        <span class="post-category"></span>
+        <h3 class="post-title"></h3>
+        <div class="post-author-info">
+          <div class="author-avatar">
+            <img alt="" loading="lazy">
+          </div>
+          <div class="author-details">
+            <span class="author-name"></span>
+            <span class="post-date"></span>
+          </div>
+        </div>
+        <p class="post-excerpt"></p>
+        <a href="" class="read-more" aria-label="Read full travel story">Read Travel Story</a>
+      </div>
+    </div>
+  </template>
+
+  <template id="compactPostTemplate">
+    <div class="compact-post-card">
+      <div class="post-image">
+        <img alt="" loading="lazy">
+      </div>
+      <div class="post-content">
+        <span class="post-category"></span>
+        <h3 class="post-title"></h3>
+        <div class="post-author-info">
+          <div class="author-avatar">
+            <img alt="" loading="lazy">
+          </div>
+          <div class="author-details">
+            <span class="author-name"></span>
+            <span class="post-date"></span>
+          </div>
+        </div>
+        <a href="" class="read-more" aria-label="Read full travel story">Read Travel Story</a>
+      </div>
+    </div>
+  </template>
+
+  <!-- Scriptet e SEO-së -->
+  <script src="../js/seo.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>

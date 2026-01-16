@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- Meta tags për SEO - dinamike -->
+  <title id="page-title">Author Profile - TravelJourney</title>
+  <meta name="description" content="Meet our travel author and discover their authentic Albanian travel experiences and stories" id="page-description" />
+  <meta name="keywords" content="travel author, Albania travel writer, travel blogger, Albanian travel expert" id="page-keywords" />
+  <link rel="canonical" href="http://127.0.0.1:5500/pages/author.html" id="page-canonical" />
+  
+  <!-- Meta tags për Open Graph -->
+  <meta property="og:title" content="Author Profile - TravelJourney" id="og-title" />
+  <meta property="og:description" content="Meet our travel author and discover their authentic Albanian travel experiences and stories" id="og-description" />
+  <meta property="og:type" content="profile" id="og-type" />
+  <meta property="og:url" content="http://127.0.0.1:5500/pages/author.html" id="og-url" />
+  <meta property="og:site_name" content="TravelJourney.al" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Meta tags për Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Author Profile - TravelJourney" id="twitter-title" />
+  <meta name="twitter:description" content="Meet our travel author and discover their authentic Albanian travel experiences and stories" id="twitter-description" />
+  
+  <!-- Linkjet e CSS-së -->
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/author.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Të dhënat e strukturuara - JSON-LD -->
+  <script type="application/ld+json" id="structured-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Travel Author",
+    "description": "Passionate travel writer sharing authentic Albanian travel experiences",
+    "url": "http://127.0.0.1:5500/pages/author.html",
+    "mainEntityOfPage": {
+      "@type": "ProfilePage",
+      "@id": "http://127.0.0.1:5500/pages/author.html"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!--Navbar-->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-logo">TravelJourney</div>
+      <div class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="posts.html">Posts</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-trigger">Categories <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-content" id="categoryList">
+            <!-- Kategoriet do të mbushen me JS -->
+          </ul>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+        <li id="profileItem" style="display: none;"><a href="profile.html"><i class="fas fa-user-circle"></i> <span id="userNameDisplay">My Profile</span></a></li>
+        <li id="loginItem"><a href="login.html" id="loginLogoutBtn">Login</a></li>
+        <li id="registerItem"><a href="register.html" class="register-btn">Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Banner-i i kokës së faqes -->
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> / <span id="breadcrumb-author">Author Profile</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni i profilit të autorit -->
+  <section class="author-profile-section">
+    <div class="container">
+      <div class="profile-header">
+        <div class="profile-image-container">
+          <img id="authorImage" src="../image/default-avatar.jpg" alt="Author profile image" loading="lazy">
+        </div>
+        <div class="profile-info">
+          <h1 id="authorName">Loading author info...</h1>
+          <p id="authorLocation" class="location"><i class="fas fa-map-marker-alt"></i> <span>Location loading...</span></p>
+          <p id="authorJoinDate" class="join-date"><i class="fas fa-calendar-alt"></i> <span>Joined: Loading...</span></p>
+          <p id="authorDescription" class="description">Loading author description...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni i postimeve të autorit -->
+  <section class="author-posts-section">
+    <div class="container">
+      <h2 class="section-title">Travel Stories by <span id="authorNameInTitle">this author</span></h2>
+      <div id="authorPosts" class="posts-grid">
+        <!-- Postimet e autorit do të ngarkohen këtu përmes JavaScript -->
+        <div class="loading" id="authorPosts-loader">
+          <div class="loader-spinner"></div>
+          <p>Loading author's travel stories...</p>
+        </div>
+      </div>
+      
+      <!-- Mesazhi "Nuk ka postime" -->
+      <div id="noPostsMessage" class="no-posts-message" style="display: none;">
+        <div class="no-posts-icon">
+          <i class="fas fa-map-marked-alt"></i>
+        </div>
+        <h3>No Travel Stories Yet</h3>
+        <p>This author hasn't shared any travel experiences yet, but stay tuned for amazing Albanian adventures!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni i gazetës -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-container">
+        <div class="newsletter-content">
+          <h2>Never Miss an Adventure</h2>
+          <p>Subscribe to our newsletter and get the latest travel tips and stories straight to your inbox.</p>
+          <div class="newsletter-features">
+            <div class="feature">
+              <i class="fas fa-check"></i>
+              <span>Latest travel stories</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check"></i>
+              <span>Author spotlights</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-check"></i>
+              <span>Exclusive travel tips</span>
+            </div>
+          </div>
+        </div>
+        <div class="newsletter-form">
+          <div class="form-group">
+            <input type="email" placeholder="Your Email Address" id="newsletterEmail" />
+            <button class="btn newsletter-btn" id="subscribeBtn">
+              <i class="fas fa-paper-plane"></i> Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">TravelJourney</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="posts.html">Posts</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <p class="copyright">Copyright TravelJourney © 2025. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Modali i dialogut të hyrjes -->
+  <div id="loginDialogModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-header">
+        <h2><i class="fas fa-sign-in-alt"></i> Login Required</h2>
+      </div>
+      <div class="modal-body">
+        <div class="modal-icon">
+          <i class="fas fa-user-lock"></i>
+        </div>
+        <p>You need to be logged in to perform this action. Would you like to login now?</p>
+        <div class="modal-benefits">
+          <div class="benefit-item">
+            <i class="fas fa-check"></i>
+            <span>Follow your favorite authors</span>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-check"></i>
+            <span>Save travel stories</span>
+          </div>
+          <div class="benefit-item">
+            <i class="fas fa-check"></i>
+            <span>Share your own experiences</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="cancelLoginBtn" class="btn btn-secondary">Maybe Later</button>
+        <button id="proceedLoginBtn" class="btn btn-primary">
+          <i class="fas fa-sign-in-alt"></i> Login Now
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tooltip -->
+  <div id="tooltip" class="tooltip">
+    <div class="tooltip-content">
+      <i class="fas fa-info-circle"></i>
+      <span class="tooltip-text"></span>
+    </div>
+    <div class="tooltip-arrow"></div>
+  </div>
+
+  <!-- Kontejneri i njoftimeve -->
+  <div id="notification-container"></div>
+
+  <!-- Template për postimet e autorit -->
+  <template id="authorPostTemplate">
+    <div class="author-post-card">
+      <div class="post-image">
+        <img src="" alt="" loading="lazy">
+        <div class="post-category-badge"></div>
+      </div>
+      <div class="post-content">
+        <h3 class="post-title"></h3>
+        <div class="post-meta">
+          <span class="post-date"></span>
+          <span class="post-reading-time"></span>
+        </div>
+        <p class="post-excerpt"></p>
+        <div class="post-footer">
+          <a href="" class="read-more-btn">
+            <span>Read Story</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <div class="post-stats">
+            <span class="stat">
+              <i class="fas fa-eye"></i>
+              <span class="view-count">0</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- Template për autorë të lidhur -->
+  <template id="relatedAuthorTemplate">
+    <div class="related-author-card">
+      <div class="author-avatar">
+        <img src="" alt="" loading="lazy">
+      </div>
+      <div class="author-info">
+        <h4 class="author-name"></h4>
+        <p class="author-location"></p>
+        <p class="author-posts-count"></p>
+        <a href="" class="view-author-btn">
+          <span>View Profile</span>
+          <i class="fas fa-user"></i>
+        </a>
+      </div>
+    </div>
+  </template>
+
+  <!-- Scriptet e SEO-së -->
+  <script src="../js/author.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/seo.js"></script>
+</body>
+</html>

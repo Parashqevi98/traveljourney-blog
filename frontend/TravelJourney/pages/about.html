@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Meta tags për SEO - dinamike -->
+  <title id="page-title">About Us | TravelJourney</title>
+  <meta name="description" content="Learn about TravelJourney.al, a community-driven platform sharing authentic Albanian travel experiences" id="page-description" />
+  <meta name="keywords" content="about TravelJourney, Albanian travel community, authentic travel Albania" id="page-keywords" />
+  <link rel="canonical" href="http://127.0.0.1:5500/pages/about.html" id="page-canonical" />
+  
+  <!-- Meta tags për Open Graph -->
+  <meta property="og:title" content="About Us | TravelJourney" id="og-title" />
+  <meta property="og:description" content="Learn about TravelJourney.al, a community-driven platform sharing authentic Albanian travel experiences" id="og-description" />
+  <meta property="og:type" content="website" id="og-type" />
+  <meta property="og:url" content="http://127.0.0.1:5500/pages/about.html" id="og-url" />
+  <meta property="og:site_name" content="TravelJourney.al" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Meta tags për Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Us | TravelJourney" id="twitter-title" />
+  <meta name="twitter:description" content="Learn about TravelJourney.al, a community-driven platform sharing authentic Albanian travel experiences" id="twitter-description" />
+  
+  <!-- Linkjet e CSS-së -->
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/about.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Të dhënat e strukturuara - JSON-LD -->
+  <script type="application/ld+json" id="structured-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About TravelJourney.al",
+    "description": "Learn about TravelJourney.al, a community-driven platform sharing authentic Albanian travel experiences",
+    "url": "http://127.0.0.1:5500/pages/about.html",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "TravelJourney.al",
+      "description": "Community-driven platform for authentic Albanian travel experiences",
+      "url": "http://127.0.0.1:5500"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Shiriti i navigimit -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-logo">TravelJourney</div>
+      <div class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="posts.html">Posts</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-trigger">Categories <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-content" id="categoryList">
+            <!-- Kategoriet do të mbushen me JS -->
+          </ul>
+        </li>
+        <li class="active"><a href="about.html">About Us</a></li>
+        <li id="profileItem" style="display: none;"><a href="profile.html"><i class="fas fa-user-circle"></i> My Profile</a></li>
+        <li id="loginItem"><a href="login.html" id="loginLogoutBtn">Login</a></li>
+        <li id="registerItem"><a href="register.html" class="register-btn">Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Seksioni kryesor hero -->
+  <section class="hero" style="background: url('../image/aboutimg.jpg') no-repeat center center; background-size: cover;">
+    <div class="container">
+      <div class="hero-content">
+        <h1>About TravelJourney</h1>
+        <p>Discover the story behind Albania's premier travel blog and the passionate writers dedicated to showcasing our beautiful country's hidden treasures, cultural heritage, and breathtaking landscapes to travelers from around the world.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Përmbajtja kryesore e faqes About -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-container">
+        <div class="about-content-grid">
+          <div class="about-text-card">
+            <div class="about-icon">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <h2>Our Story</h2>
+            <div class="story-timeline">
+              <div class="timeline-item">
+                <div class="timeline-year">2025</div>
+                <div class="timeline-content">
+                  <p>TravelJourney began with a simple idea: to help international travelers discover authentic experiences in one of Europe's most underrated destinations.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-year">Today</div>
+                <div class="timeline-content">
+                  <p>We've grown into a trusted community of passionate locals and travelers who share their love for Albania with the world, promoting inspiring, informative, and respectful travel.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Statistikat e historisë -->
+            <div class="story-stats">
+              <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Destinations Covered</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">100K+</div>
+                <div class="stat-label">Travelers Helped</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Travel Stories</div>
+              </div>
+            </div>
+          </div>
+          <div class="about-image-card">
+            <div class="image-wrapper">
+              <img src="../image/explore.avif" alt="The TravelJourney team exploring Albanian mountains" loading="lazy" />
+              <div class="image-overlay">
+                <div class="overlay-content">
+                  <i class="fas fa-mountain"></i>
+                  <p>Exploring Albania's Hidden Gems</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni i misionit tonë -->
+  <section class="mission-section">
+    <div class="container">
+      <h2 class="section-title">Our Mission</h2>
+      <div class="mission-container">
+        <div class="mission-card">
+          <div class="mission-icon">
+            <i class="fas fa-compass"></i>
+          </div>
+          <h3>Authentic Exploration</h3>
+          <p>We seek to showcase Albania beyond tourist hotspots, taking you to hidden gems and authentic experiences that reflect the true spirit of our country.</p>
+        </div>
+        <div class="mission-card">
+          <div class="mission-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>Cultural Bridge</h3>
+          <p>We aim to create understanding between visitors and locals, explaining cultural nuances and traditions that make Albania unique in the Balkans.</p>
+        </div>
+        <div class="mission-card">
+          <div class="mission-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3>Sustainable Travel</h3>
+          <p>We promote responsible tourism practices that preserve Albania's natural beauty and cultural heritage for future generations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni i vizionit tonë -->
+  <section class="vision-section">
+    <div class="container">
+      <div class="vision-container">
+        <div class="vision-image-card">
+          <div class="vision-image-wrapper">
+            <img src="../image/nature.webp" alt="Future of Albanian tourism" loading="lazy" />
+            <div class="vision-badge">
+              <span>2030 Vision</span>
+            </div>
+          </div>
+        </div>
+        <div class="vision-content-card">
+          <div class="vision-icon">
+            <i class="fas fa-eye"></i>
+          </div>
+          <h2>Our Vision</h2>
+          <div class="vision-goals">
+            <div class="goal-item">
+              <div class="goal-icon">
+                <i class="fas fa-globe-europe"></i>
+              </div>
+              <div class="goal-content">
+                <h4>Premier Destination</h4>
+                <p>We envision Albania becoming a premier sustainable tourism destination in Europe, where visitors create meaningful connections with local communities.</p>
+              </div>
+            </div>
+            <div class="goal-item">
+              <div class="goal-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="goal-content">
+                <h4>1 Million Travelers</h4>
+                <p>By 2030, we aim to have helped over 1 million international travelers experience the authentic Albania, contributing to economic growth in rural areas.</p>
+              </div>
+            </div>
+            <div class="goal-item">
+              <div class="goal-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <div class="goal-content">
+                <h4>Cultural Preservation</h4>
+                <p>We're committed to showcasing tourism evolution while maintaining genuine hospitality and pristine natural environments that make our country special.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni për eksplorimin e Shqipërisë -->
+  <section class="explore-section">
+    <div class="container">
+      <h2 class="section-title">Explore Albania With Us</h2>
+      <div class="explore-container">
+        <div class="explore-card">
+          <div class="explore-image">
+            <img src="../image/aboutbeach.avif" alt="Albanian Riviera coastline" loading="lazy" />
+            <div class="explore-overlay">
+              <h3>Coastal Treasures</h3>
+            </div>
+          </div>
+          <div class="explore-content">
+            <p>Discover the breathtaking Albanian Riviera with its crystal-clear waters, hidden beaches, and charming coastal villages that rival any Mediterranean destination.</p>
+          </div>
+        </div>
+        <div class="explore-card">
+          <div class="explore-image">
+            <img src="../image/aboutmountain.webp" alt="Albanian Alps" loading="lazy" />
+            <div class="explore-overlay">
+              <h3>Mountain Adventures</h3>
+            </div>
+          </div>
+          <div class="explore-content">
+            <p>Venture into the majestic Albanian Alps and experience some of Europe's most unspoiled mountain landscapes with breathtaking hiking trails and authentic rural experiences.</p>
+          </div>
+        </div>
+        <div class="explore-card">
+          <div class="explore-image">
+            <img src="../image/aboutculture.webp" alt="Albanian cultural heritage" loading="lazy" />
+            <div class="explore-overlay">
+              <h3>Cultural Heritage</h3>
+            </div>
+          </div>
+          <div class="explore-content">
+            <p>Immerse yourself in Albania's rich cultural heritage, from ancient ruins and UNESCO sites to vibrant traditions, festivals, and the famous Albanian hospitality.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Butoni për të zbuluar më shumë -->
+      <div class="discover-more-section">
+        <div class="discover-content">
+          <h3>Ready to Start Your Journey?</h3>
+          <p>Explore hundreds of travel stories, guides, and tips from every corner of Albania</p>
+        </div>
+        <a href="posts.html" class="discover-btn">
+          <span>Discover All Posts</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni i kontaktit -->
+  <section class="contact-section">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <div class="contact-methods">
+        <div class="contact-method">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <p class="contact-label">Email us at:</p>
+          <p>info@travel-journey.com</p>
+        </div>
+        <div class="contact-method">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <p class="contact-label">Based in:</p>
+          <p>Tirana, Albania</p>
+        </div>
+        <div class="contact-method">
+          <div class="contact-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <p class="contact-label">Call us at:</p>
+          <p>+355 69 386 2228</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni CTA (Call to Action) -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Explore Albania?</h2>
+      <p>Join our community of travelers and receive personalized recommendations, exclusive content, and special offers from our local partners.</p>
+      <a href="register.html" class="btn btn-large btn-primary" id="ctaSignUpBtn">Sign Up Now</a>
+    </div>
+  </section>
+
+  <!-- Poshtëfaqja -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">TravelJourney</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="posts.html">Posts</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <p class="copyright">Copyright TravelJourney © 2025. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Tooltip -->
+  <div id="tooltip" class="tooltip"></div>
+
+  <!-- Kontejneri i njoftimeve -->
+  <div id="notification-container"></div>
+
+  <!-- Scriptet e SEO-së -->
+  <script src="../js/seo.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/about.js"></script>
+</body>
+</html>

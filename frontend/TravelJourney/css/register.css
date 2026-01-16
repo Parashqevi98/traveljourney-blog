@@ -1,0 +1,9 @@
+/* Register Page - Uses same styles as Login Page */
+@import url("../css/login.css");
+
+/* Additional register-specific styles if needed */
+.register-container {
+  max-width: 480px;
+}
+
+/* All other styles are inherited from login.css */

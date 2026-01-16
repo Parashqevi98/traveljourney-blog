@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- Meta tags për SEO - dinamike -->
+  <title id="page-title">Post Details - TravelJourney</title>
+  <meta name="description" content="Read this amazing travel story from Albania. Discover authentic experiences and local insights from real travelers" id="page-description" />
+  <meta name="keywords" content="Albania travel story, travel experience, travel blog post, Albanian destinations" id="page-keywords" />
+  <link rel="canonical" href="http://127.0.0.1:5500/pages/singlepost.html" id="page-canonical" />
+  
+  <!-- Meta tags për Open Graph -->
+  <meta property="og:title" content="Post Details - TravelJourney" id="og-title" />
+  <meta property="og:description" content="Read this amazing travel story from Albania. Discover authentic experiences and local insights from real travelers" id="og-description" />
+  <meta property="og:type" content="article" id="og-type" />
+  <meta property="og:url" content="http://127.0.0.1:5500/pages/singlepost.html" id="og-url" />
+  <meta property="og:site_name" content="TravelJourney.al" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Meta tags për Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Post Details - TravelJourney" id="twitter-title" />
+  <meta name="twitter:description" content="Read this amazing travel story from Albania. Discover authentic experiences and local insights from real travelers" id="twitter-description" />
+  
+  <!-- Linkjet e CSS-së -->
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/singlepost.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Të dhënat e strukturuara - JSON-LD -->
+  <script type="application/ld+json" id="structured-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Travel Story",
+    "description": "Read this amazing travel story from Albania. Discover authentic experiences and local insights from real travelers",
+    "url": "http://127.0.0.1:5500/pages/singlepost.html",
+    "author": {
+      "@type": "Person",
+      "name": "TravelJourney Author"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TravelJourney.al"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Shiriti i navigimit -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-logo">TravelJourney</div>
+      <div class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="posts.html">Posts</a></li>
+        <li class="dropdown">
+          <a href="#">Categories ▼</a>
+          <ul class="dropdown-content" id="categoryList">
+            <!-- Kategoriet do të mbushen me JS -->
+          </ul>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+        <li id="profileItem" style="display: none;"><a href="profile.html"><i class="fas fa-user-circle"></i> <span id="userNameDisplay">My Profile</span></a></li>
+        <li id="loginItem"><a href="login.html" id="loginLogoutBtn">Login</a></li>
+        <li id="registerItem"><a href="register.html" class="register-btn">Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Zona e kokës së postimit -->
+  <section class="post-header">
+    <div class="container">
+      <div class="post-breadcrumb">
+        <a href="index.html">Home</a> / <a href="posts.html">Posts</a> / <span id="currentPostTitle">Current Post</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zona kryesore e përmbajtjes -->
+  <main class="post-main">
+    <div class="container">
+      <div class="post-content-wrapper">
+        <!-- Kontejneri i detajeve të postimit -->
+        <div id="postDetailContainer">
+          <!-- Detajet e postimit do të ngarkohen këtu dinamikisht -->
+          <div class="loading-container">
+            <div class="loading"></div>
+            <p>Loading post details...</p>
+          </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <aside class="post-sidebar">
+          <!-- Widget-i i profilit të autorit -->
+          <div class="sidebar-widget author-widget" id="authorProfileWidget">
+            <h3>About the Author</h3>
+            <div class="loading-container">
+              <div class="loading"></div>
+              <p>Loading author profile...</p>
+            </div>
+          </div>
+
+          <div class="sidebar-widget">
+            <h3>Share This Post</h3>
+            <div class="share-buttons">
+              <a href="#" class="share-button facebook" title="Share on Facebook" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="share-button twitter" title="Share on Twitter" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="share-button pinterest" title="Share on Pinterest" aria-label="Share on Pinterest"><i class="fab fa-pinterest-p"></i></a>
+              <a href="#" class="share-button linkedin" title="Share on LinkedIn" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+
+          <div class="sidebar-widget cta-widget">
+            <h3>Explore Albania</h3>
+            <p>Discover more amazing destinations and travel tips for your next Albanian adventure!</p>
+            <a href="categories.html" class="btn btn-sidebar">View All Categories</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Seksioni i postimeve të autorit -->
+  <section class="author-posts-section" id="authorPostsSection">
+    <div class="container">
+      <h2>More Posts by This Author</h2>
+      <div class="author-posts-grid" id="authorPostsGrid">
+        <!-- Postimet e autorit do të ngarkohen këtu dinamikisht -->
+        <div class="loading-container">
+          <div class="loading"></div>
+          <p>Loading more posts...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni i rekomandimeve statike -->
+  <section class="static-recommendations">
+    <div class="container">
+      <div class="static-recommendations-content">
+        <h2>Discover More Travel Adventures</h2>
+        <p>Looking for more travel inspiration? We have hundreds of authentic travel stories, tips, and guides from all over the world. Explore our collection and plan your next adventure today!</p>
+        <a href="posts.html" class="recommendations-cta">Browse All Posts</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni i gazetës -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-container">
+        <div class="newsletter-content">
+          <h2>Never Miss an Adventure</h2>
+          <p>Subscribe to our newsletter and get the latest travel tips and stories straight to your inbox.</p>
+        </div>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Your Email Address" />
+          <button class="btn newsletter-btn">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Poshtëfaqja -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">TravelJourney</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="posts.html">Posts</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <p class="copyright">Copyright TravelJourney © 2025. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Kontejneri i njoftimeve -->
+  <div id="notification-container"></div>
+
+  <!-- Modali i dialogut të hyrjes -->
+  <div id="loginDialogModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-header">
+        <h2>Login Required</h2>
+      </div>
+      <div class="modal-body">
+        <p>You need to be logged in to perform this action. Would you like to login now?</p>
+      </div>
+      <div class="modal-footer">
+        <button id="cancelLoginBtn" class="btn btn-secondary">Cancel</button>
+        <button id="proceedLoginBtn" class="btn">Login</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tooltip -->
+  <div id="tooltip" class="tooltip"></div>
+
+  <!-- Scriptet e SEO-së -->
+  <script src="../js/seo.js"></script>
+  <script src="../js/singlepost.js"></script>
+</body>
+</html>

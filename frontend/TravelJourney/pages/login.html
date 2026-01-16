@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Meta tags për SEO - statike -->
+  <title>Login - TravelJourney</title>
+  <meta name="description" content="Log in to your TravelJourney account to share your Albanian travel experiences, manage your profile, and connect with fellow travelers.">
+  <meta name="keywords" content="TravelJourney login, travel community login, Albanian travel blog login">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="http://127.0.0.1:5500/pages/login.html">
+  
+  <!-- Meta tags për Open Graph -->
+  <meta property="og:title" content="Login - TravelJourney">
+  <meta property="og:description" content="Log in to your TravelJourney account to share your Albanian travel experiences, manage your profile, and connect with fellow travelers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://127.0.0.1:5500/pages/login.html">
+  <meta property="og:site_name" content="TravelJourney.al">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Meta tags për Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Login - TravelJourney">
+  <meta name="twitter:description" content="Log in to your TravelJourney account to share your Albanian travel experiences, manage your profile, and connect with fellow travelers.">
+  
+  <!-- Linkjet e CSS-së -->
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="login-page">
+  <!-- Navbar-->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-logo">TravelJourney</div>
+      <div class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="posts.html">Posts</a></li>
+        <li class="dropdown">
+          <a href="#">Categories ▼</a>
+          <ul class="dropdown-content" id="categoryList"></ul>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+        <li id="loginItem" class="active"><a href="login.html" id="loginLogoutBtn">Login</a></li>
+        <li id="registerItem"><a href="register.html" class="register-btn">Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Seksioni i hyrjes -->
+  <section class="login-section">
+    <div class="login-container">
+      <div class="login-header">
+        <h2>Log in to TravelJourney</h2>
+        <p>Share your Albanian adventures with fellow travelers</p>
+      </div>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email"><i class="fas fa-envelope"></i></label>
+          <input type="email" id="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <label for="password"><i class="fas fa-lock"></i></label>
+          <input type="password" id="password" placeholder="Your Password" required>
+        </div>
+        <div id="error" class="error-message"></div>
+        <button type="submit" class="btn login-btn">Log In</button>
+      </form>
+      <div class="form-footer">
+        <p>Don't have an account? <a href="register.html">Register</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">TravelJourney</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="posts.html">Posts</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <p class="copyright">Copyright TravelJourney © 2025. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/login.js"></script>
+</body>
+</html>

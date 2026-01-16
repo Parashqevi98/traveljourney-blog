@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /profile/
+Disallow: /login
+Disallow: /register
+
+# Sitemap location
+Sitemap: http://127.0.0.1:5500/sitemap/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

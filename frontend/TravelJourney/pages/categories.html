@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Meta tags për SEO - dinamike -->
+  <title id="page-title">Categories | TravelJourney</title>
+  <meta name="description" content="Explore Albanian destinations by categories: Adventure Chronicles, Culture Code, Hidden Gems, Local Wisdom, and more travel experiences" id="page-description" />
+  <meta name="keywords" content="Albania travel categories, adventure travel Albania, cultural experiences Albania, hidden gems Balkans" id="page-keywords" />
+  <link rel="canonical" href="http://127.0.0.1:5500/pages/categories.html" id="page-canonical" />
+  
+  <!-- Meta tags për Open Graph -->
+  <meta property="og:title" content="Categories | TravelJourney" id="og-title" />
+  <meta property="og:description" content="Explore Albanian destinations by categories: Adventure Chronicles, Culture Code, Hidden Gems, Local Wisdom, and more travel experiences" id="og-description" />
+  <meta property="og:type" content="website" id="og-type" />
+  <meta property="og:url" content="http://127.0.0.1:5500/pages/categories.html" id="og-url" />
+  <meta property="og:site_name" content="TravelJourney.al" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Meta tags për Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Categories | TravelJourney" id="twitter-title" />
+  <meta name="twitter:description" content="Explore Albanian destinations by categories: Adventure Chronicles, Culture Code, Hidden Gems, Local Wisdom, and more travel experiences" id="twitter-description" />
+  
+  <!-- Linkjet e CSS-së -->
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/categories.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Të dhënat e strukturuara - JSON-LD -->
+  <script type="application/ld+json" id="structured-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Travel Categories",
+    "description": "Explore Albanian destinations by categories: Adventure Chronicles, Culture Code, Hidden Gems, Local Wisdom, and more travel experiences",
+    "url": "http://127.0.0.1:5500/pages/categories.html"
+  }
+  </script>
+</head>
+<body>
+  <!-- Shiriti i navigimit -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-logo">TravelJourney</div>
+      <div class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="posts.html">Posts</a></li>
+        <li class="dropdown active">
+          <a href="#">Categories ▼</a>
+          <ul class="dropdown-content" id="categoryList">
+            <!-- Kategoriet do të mbushen përmes JS -->
+          </ul>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+        <li id="profileItem" style="display: none;"><a href="profile.html"><i class="fas fa-user-circle"></i> My Profile</a></li>
+        <li id="loginItem"><a href="login.html" id="loginLogoutBtn">Login</a></li>
+        <li id="registerItem"><a href="register.html" class="register-btn">Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Seksioni kryesor për kategorinë -->
+  <section class="category-hero">
+    <div class="container">
+      <div class="category-hero-content">
+        <h1 id="categoryTitle">Category Name</h1>
+        <p class="category-description">Explore our curated collection of articles and stories about this fascinating topic. Discover new perspectives, tips, and insights from our experienced writers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni i postimeve të zgjedhura -->
+  <section class="featured-category-posts">
+    <div class="container">
+      <div id="featuredCategoryPosts">
+        <!-- Postimet e zgjedhura do të shfaqen këtu -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni i postimeve të kategorisë -->
+  <section class="category-posts-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>All Posts</h2>
+        <div class="view-options">
+          <button class="view-option active" data-view="grid"><i class="fas fa-th-large"></i></button>
+          <button class="view-option" data-view="list"><i class="fas fa-list"></i></button>
+        </div>
+      </div>
+      <div id="categoryPosts" class="grid-view">
+        <!-- Postimet e kategorisë do të shfaqen këtu -->
+        <div class="loading-container">
+          <div class="loading"></div>
+          <p>Loading posts...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni i abonimit -->
+  <section class="subscribe-section">
+    <div class="container">
+      <div class="subscribe-content">
+        <h2>Stay Updated with <span class="highlight" id="categoryHighlight">Category</span> Posts</h2>
+        <p>Subscribe to our newsletter and never miss new articles and updates about your favorite topics.</p>
+        <form class="subscribe-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Poshtëfaqja -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">TravelJourney</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="posts.html">Posts</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <p class="copyright">Copyright TravelJourney © 2025. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Tooltip -->
+  <div id="tooltip" class="tooltip"></div>
+
+  <!-- Kontejneri i njoftimeve -->
+  <div id="notification-container"></div>
+
+  <!-- Scriptet e SEO-së -->
+  <script src="../js/seo.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/categories.js"></script>
+</body>
+</html>

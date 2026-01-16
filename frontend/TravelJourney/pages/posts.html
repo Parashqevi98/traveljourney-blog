@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- Meta tags për SEO - dinamike -->
+  <title id="page-title">All Posts - TravelJourney</title>
+  <meta name="description" content="Browse all authentic travel experiences and stories from Albania. Find inspiration for your next adventure through real traveler experiences and local insights" id="page-description" />
+  <meta name="keywords" content="Albania travel posts, travel stories Albania, Albanian experiences, travel blog posts, Balkans adventures" id="page-keywords" />
+  <link rel="canonical" href="http://127.0.0.1:5500/pages/posts.html" id="page-canonical" />
+  
+  <!-- Meta tags për Open Graph -->
+  <meta property="og:title" content="All Posts - TravelJourney" id="og-title" />
+  <meta property="og:description" content="Browse all authentic travel experiences and stories from Albania. Find inspiration for your next adventure through real traveler experiences and local insights" id="og-description" />
+  <meta property="og:type" content="website" id="og-type" />
+  <meta property="og:url" content="http://127.0.0.1:5500/pages/posts.html" id="og-url" />
+  <meta property="og:site_name" content="TravelJourney.al" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Meta tags për Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="All Posts - TravelJourney" id="twitter-title" />
+  <meta name="twitter:description" content="Browse all authentic travel experiences and stories from Albania. Find inspiration for your next adventure through real traveler experiences and local insights" id="twitter-description" />
+  
+  <!-- Linkjet e CSS-së -->
+  <link rel="stylesheet" href="../css/index.css" />
+  <link rel="stylesheet" href="../css/posts.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Të dhënat e strukturuara - JSON-LD -->
+  <script type="application/ld+json" id="structured-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "All Travel Posts",
+    "description": "Browse all authentic travel experiences and stories from Albania. Find inspiration for your next adventure through real traveler experiences and local insights",
+    "url": "http://127.0.0.1:5500/pages/posts.html"
+  }
+  </script>
+</head>
+<body>
+  <!-- Shiriti i navigimit -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-logo">TravelJourney</div>
+      <div class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="posts.html">Posts</a></li>
+        <li class="dropdown">
+          <a href="#">Categories ▼</a>
+          <ul class="dropdown-content" id="categoryList">
+            <!-- Kategoriet do të mbushen me JS -->
+          </ul>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+        <li id="profileItem" style="display: none;"><a href="profile.html"><i class="fas fa-user-circle"></i> My Profile</a></li>
+        <li id="loginItem"><a href="login.html" id="loginLogoutBtn">Login</a></li>
+        <li id="registerItem"><a href="register.html" class="register-btn">Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Banner kryesor për postimet -->
+  <section class="posts-hero">
+    <div class="container">
+      <div class="posts-hero-content">
+        <h1>Explore Travel Stories</h1>
+        <p>Discover unique journeys, hidden gems, and travel inspiration from our community of passionate travelers</p>
+        <button id="createPostBtn" class="btn btn-large">Share Your Journey</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni i filtrave -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-container">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search posts...">
+          <button id="searchBtn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="category-filter">
+          <select id="categoryFilter">
+            <option value="">All Categories</option>
+            <!-- Kategoriet do të mbushen me JS -->
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Përmbajtja kryesore: Grila e postimeve -->
+  <section class="posts-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>All Travel Stories</h2>
+        <div class="sort-options">
+          <span>Sort by: </span>
+          <select id="sortOptions">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="popular">Most Popular</option>
+          </select>
+        </div>
+      </div>
+      
+      <div id="postsContainer" class="posts-grid">
+        <!-- Postimet do të ngarkohen me JS -->
+        <div class="loading-container">
+          <div class="loading"></div>
+          <p>Loading amazing travel stories...</p>
+        </div>
+      </div>
+      
+      <!-- Butoni "Ngarko më shumë" -->
+      <div class="load-more-container">
+        <button id="loadMoreBtn" class="btn">Load More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seksioni i gazetës -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-container">
+        <div class="newsletter-content">
+          <h2>Never Miss a Journey</h2>
+          <p>Subscribe to our newsletter and get notified about new travel stories and tips.</p>
+        </div>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Your email address">
+          <button class="btn">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Poshtëfaqja -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">TravelJourney</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="posts.html">Posts</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <p class="copyright">Copyright TravelJourney © 2025. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Modali i dialogut të hyrjes -->
+  <div id="loginDialogModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="modal-header">
+        <h2>Login Required</h2>
+      </div>
+      <div class="modal-body">
+        <p>You need to be logged in to create a post. Would you like to login now?</p>
+      </div>
+      <div class="modal-footer">
+        <button id="cancelLoginBtn" class="btn btn-secondary">Cancel</button>
+        <button id="proceedLoginBtn" class="btn">Login</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tooltip -->
+  <div id="tooltip" class="tooltip"></div>
+
+  <!-- Kontejneri i njoftimeve -->
+  <div id="notification-container"></div>
+
+  <!-- Scriptet e SEO-së -->
+  <script src="../js/seo.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/posts.js"></script>
+</body>
+</html>
